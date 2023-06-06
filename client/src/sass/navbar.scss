@@ -18,10 +18,14 @@
 
   .nav-link{
     color: var(--white);
+
+    &:hover{
+      color: var(--secondary-color) !important;
+    }
   }
 
   .active{
-    color: red !important;
+    color: var(--secondary-color) !important;
   }
   
   button.nav-toggler{
