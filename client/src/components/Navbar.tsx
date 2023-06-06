@@ -1,19 +1,22 @@
 import { NavLink } from 'react-router-dom';
 import '../sass/navbar.scss';
+import { useState } from 'react';
 
 const Navbar = () => {
+
+  const [hideMenu, setHideMenu] = useState<boolean>(true);
+
   return (
     <nav className='navbar' id='navbar'>
       <div className="container">
         <div className="navbar-brand-wrapper">
           <NavLink className='navbar-brand' to='/'> Car<span>Rental</span></NavLink>
         </div>
-        {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target='#ftco-nav' aria-controls='ftco-nav' aria-expanded='false' aria-label='Toggle navbar'> */}
-        <button className="navbar-toggler" type="button" aria-label='Toggle navbar'>
-          <i className="fa-solid fa-bars" /> MENU
+        <button onClick={() => setHideMenu(!hideMenu)} className="nav-toggler" type="button" aria-label='Toggle navbar'>
+          <i className={`fa-solid fa-${ hideMenu ? 'bars' : 'times' }`} /> {hideMenu ? 'Menu' : 'close'}
         </button>
 
-        <ul className="my-auto">
+        <ul className={`my-auto ${hideMenu && 'hide'}`}>
           <li className="nav-item">
             <NavLink to="/" className="nav-link active">Home</NavLink>
           </li>

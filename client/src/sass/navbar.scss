@@ -1,20 +1,18 @@
 #navbar{
-  min-height: 70px !important;
+  // min-height: 70px !important;
   background-color: var(--black);
   color: var(--white) !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 10px;
+  padding: 30px 10px;
 
   .navbar-brand{
     color: var(--white);
     text-transform: uppercase;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 1.375em;
+    display: block !important;
 
     span{
-      color: var(--secondary-color)
+      color: var(--secondary-color);
     }
   }
 
@@ -22,8 +20,7 @@
     color: var(--white);
   }
   
-  button.navbar-toggler{
-    color: var(--white);
+  button.nav-toggler{
     display: none;
   }
 
@@ -40,7 +37,7 @@
 
   ul > li > .nav-link{
     text-decoration: none;
-    font-size: 15px;
+    font-size: 1em;
     padding-top: .9rem;
     padding-bottom: .9rem;
     color: white;
@@ -52,21 +49,44 @@
   }
 
 
-  @media screen and (max-width: 900px){
+  @media screen and (max-width: 992px){
 
-    button.navbar-toggler{ 
+    button.nav-toggler{ 
+      background-color: transparent;
+      color: var(--white);
       margin-left: auto !important;
-      display: block;
+      display: block !important;
+      border: none !important;
+      outline: none !important;
+      border-color: rgba(0,0,0,.5)!important;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 16px;
+      letter-spacing: .1em;
+
+      &:focus{
+        outline: none !important;
+        border: none !important;
+      }
+    }
+
+    ul.hide{
+      // display: none;
+      position: absolute;
+      top: -9000px;
+      left: -9000px;
     }
     
     ul{
+      display: flex;
+      margin-top: 20px !important;
       flex-direction: column;
       width: 100%;
-      display: none !important;
     }
 
     ul > li > .nav-link{
       margin: 0 -15px;
+      transform: font-size 2s;
     }
   }
 }
