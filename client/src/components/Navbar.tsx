@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import '../sass/navbar.scss';
 import { useState } from 'react';
 
@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav className='navbar' id='navbar'>
       <div className="container">
         <div className="navbar-brand-wrapper">
-          <NavLink className='navbar-brand' to='/'> Car<span>Rental</span></NavLink>
+          <Link className='navbar-brand' to='/'> Car<span>Rental</span></Link>
         </div>
         <button onClick={() => setHideMenu(!hideMenu)} className="nav-toggler" type="button" aria-label='Toggle navbar'>
           <i className={`fa-solid fa-${ hideMenu ? 'bars' : 'times' }`} /> {hideMenu ? 'Menu' : 'close'}
