@@ -18,25 +18,53 @@ const Navbar = () => {
 
         <ul className={`my-auto ${hideMenu && 'hide'}`}>
           <li className="nav-item">
-            <NavLink to="/" className="nav-link active">Home</NavLink>
+            <NavLink className='nav-link' to="/" style={({isActive, isPending}) => {
+              return {
+                color: isActive ? 'red' : 'white'
+              }
+            }} >Home</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/" className="nav-link">About</NavLink>
+            <NavLink className='nav-link' to="/about" style={({isActive, isPending}) => {
+              return {
+                color: isActive ? 'red' : 'white'
+              }
+            }} >About</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/" className="nav-link">Services</NavLink>
+            <NavLink className='nav-link' to="/services" style={({isActive, isPending}) => {
+              return {
+                color: isActive ? 'red' : 'white'
+              }
+            }} >Services</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/" className="nav-link">Pricing</NavLink>
+            <NavLink className='nav-link' to="/pricing" style={({isActive, isPending}) => {
+              return {
+                color: isActive ? 'red' : 'white'
+              }
+            }} >Pricing</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/" className="nav-link">Cars</NavLink>
+            <NavLink className='nav-link' to="/cars" style={({isActive, isPending}) => {
+              return {
+                color: isActive ? 'red' : 'white'
+              }
+            }} >Cars</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/" className="nav-link">Blog</NavLink>
+            <NavLink className='nav-link' to="/blog" style={({isActive, isPending}) => {
+              return {
+                color: isActive ? 'red' : 'white'
+              }
+            }} >Blog</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/" className="nav-link">Contact</NavLink>
+            <NavLink className='nav-link' to="/contract" style={({isActive, isPending}) => {
+              return {
+                color: isActive ? 'red' : 'white'
+              }
+            }} >Contact</NavLink>
           </li>
         </ul>
       </div>

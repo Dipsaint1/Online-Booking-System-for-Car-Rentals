@@ -19,6 +19,10 @@
   .nav-link{
     color: var(--white);
   }
+
+  .active{
+    color: red !important;
+  }
   
   button.nav-toggler{
     display: none;
