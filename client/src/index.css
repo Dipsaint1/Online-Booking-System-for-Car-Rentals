@@ -21,4 +21,6 @@
   width: 100%;
   min-height: 100vh;
   font-family: var(--primary-font);
+  /* background: rgb(223, 223, 223); */
+  /* z-index: -999 !important; */
 }
