@@ -1,7 +1,9 @@
 #booktrip{
   position: relative;
-  top: 70vh;
+  // top: 70vh;
   width: 100%;
+  bottom: 20vh;
+
 
   .request-form{
     background: var(--primary);
@@ -61,6 +63,55 @@
       }
       &:focus, &:active {
         border-color: white;
+      }
+    }
+  }
+
+  .booktrip-right{
+    background-color: white;
+    border-radius: 5px;
+  }
+  .services-wrap{
+    padding: 4em 3em;
+    background: white;
+    -webkit-box-shadow: 0px 5px 12px -1px rgba(0,0,0,0.03);
+    -moz-box-shadow: 0px 5px 12px -1px rgba(0,0,0,0.03);
+    box-shadow: 0px 5px 12px -1px rgba(0,0,0,0.03);
+
+    .heading-section{
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+
+  .services{
+    .icon{
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,.05);
+      margin: 0 auto;
+      margin-bottom: 20px;
+      
+      i{
+        font-size: 40px;
+        color: var(--primary-color);
+      }
+    }
+    
+    h3{
+      font-size: 17px;
+      font-weight: 500;
+    }
+    &.services-2{
+      .icon{
+        width: 110px;
+        height: 110px;
+        background: var(--primary-color);
+        border: none;
+        span{
+          color: white;
+        }
       }
     }
   }

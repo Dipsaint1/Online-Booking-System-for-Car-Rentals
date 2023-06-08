@@ -1,9 +1,19 @@
 #featured{
 
   position: relative;
-  top:28vh;
-  background-color: rgb(222, 216, 216);
+  bottom: 61vh;
+  // top:28vh;
+  background-color: rgb(240, 240, 240);
   min-height: 100vh;
   width: 100%;
+  height: 100%;
   z-index: -2;
+
+  .featured-container{
+    position: relative;
+    top: 50vh;
+  }
+
+
+
 }
