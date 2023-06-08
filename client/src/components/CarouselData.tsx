@@ -47,35 +47,7 @@ const CarouselData: CarouselType = [
     name: 'Mercedes Grand Sedan',
     make: 'Chevrolet',
     price: 500
-  },
-
-  {
-    img: new URL('../assets/car-7.jpg', import.meta.url).href,
-    name: 'Mercedes Grand Sedan',
-    make: 'Chevrolet',
-    price: 500
-  },
-
-  {
-    img: new URL('../assets/car-8.jpg', import.meta.url).href,
-    name: 'Mercedes Grand Sedan',
-    make: 'Chevrolet',
-    price: 500
-  },
-
-  {
-    img: new URL('../assets/car-9.jpg', import.meta.url).href,
-    name: 'Mercedes Grand Sedan',
-    make: 'Chevrolet',
-    price: 500
-  },
-
-  {
-    img: new URL('../assets/car-10.jpg', import.meta.url).href,
-    name: 'Mercedes Grand Sedan',
-    make: 'Chevrolet',
-    price: 500
-  },
+  }
 ]
 
 

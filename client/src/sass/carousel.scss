@@ -1,0 +1,51 @@
+.item{
+  margin: 10px;
+}
+
+.car-wrap{
+	margin-bottom: 40px;
+	-webkit-box-shadow: 0px 5px 12px -1px rgba(0,0,0,0.06);
+	-moz-box-shadow: 0px 5px 12px -1px rgba(0,0,0,0.06);
+	box-shadow: 0px 5px 12px -1px rgba(0,0,0,0.06);
+	background: white;
+	
+  .img{
+		width: 100%;
+		height: 220px;
+    object-fit: cover;
+	}
+
+	.text{
+		border-top: none;
+		padding: 20px 30px 30px;
+		.price{
+			color: var(--primary-color);
+			margin-bottom: 0;
+			font-weight: 600;
+			span{
+				font-size: 12px;
+				font-weight: 400;
+				color: rgba(0,0,0,.3);
+			}
+		}
+		h2{
+			font-size: 20px;
+			font-weight: 500;
+			a{
+				color: black;
+			}
+		}
+		span.make{
+			font-weight: 400;
+			color: rgba(0,0,0,.2);
+			display: block;
+			margin-bottom: 0;
+		}
+		p.d-block{
+			width: 100%;
+			a{
+				width: 50%;
+			}
+		}
+	}
+}

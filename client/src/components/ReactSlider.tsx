@@ -1,9 +1,10 @@
-import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CarouselData from './CarouselData';
 import Carousel from './Carousel';
+import '../sass/carousel.scss'
+import { useEffect, useState } from "react";
 
 interface SliderSettings{
   dots: boolean,
@@ -17,10 +18,22 @@ interface SliderSettings{
 }
 
 const ReactSlider = () => {
+  const [slidesToShow, setSlidesToShow] = useState<number>(3);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      if (window.innerWidth < 540 ) setSlidesToShow(1);
+      else if (window.innerWidth > 540 && window.innerWidth < 993) setSlidesToShow(2);
+      else setSlidesToShow(3);
+    }
+    window.addEventListener('resize', handleWindowResize);
+    return () => { window.removeEventListener("resize", handleWindowResize)}
+  }, []);
+
   const settings: SliderSettings = {
     dots: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
     speed: 1000,
