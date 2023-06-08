@@ -2,6 +2,8 @@ import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import CarouselData from './CarouselData';
+import Carousel from './Carousel';
 
 interface SliderSettings{
   dots: boolean,
@@ -14,12 +16,7 @@ interface SliderSettings{
   cssEase: string
 }
 
-// type ChildrenType = {
-//   children: React.ReactElement;
-// }
-
-// const ReactSlider = ({children}: ChildrenType): React.ReactElement => {
-  const ReactSlider = () => {
+const ReactSlider = () => {
   const settings: SliderSettings = {
     dots: true,
     infinite: true,
@@ -33,8 +30,13 @@ interface SliderSettings{
 
   return (
     <Slider {...settings}>
+      {CarouselData.map((item, index) => {
+        return(
+          <Carousel key={index} {...item} />
+        )
+      })}
     </Slider>
   )
 }
 
-export default ReactSlider
+export default ReactSlider;

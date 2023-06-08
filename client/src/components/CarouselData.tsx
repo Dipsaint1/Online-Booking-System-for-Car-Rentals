@@ -1,77 +1,77 @@
-
-type CarouselObject = {
+export type CarouselObject = {
   img: string,
   name: string,
   make:  string,
   price: number
 }
+
 export type CarouselType = CarouselObject[];
 
-const Carousel: CarouselType = [
+const CarouselData: CarouselType = [
   {
-    img: require('../assets/car-1.jpg'),
+    img: new URL('../assets/car-1.jpg', import.meta.url).href,
     name: 'Mercedes Grand Sedan',
     make: 'Chevrolet',
     price: 500
   },
 
   {
-    img: require('../assets/car-2.jpg'),
+    img: new URL('../assets/car-2.jpg', import.meta.url).href,
     name: 'Mercedes Grand Sedan',
     make: 'Chevrolet',
     price: 500
   },
 
   {
-    img: require('../assets/car-3.jpg'),
+    img: new URL('../assets/car-3.jpg', import.meta.url).href,
     name: 'Mercedes Grand Sedan',
     make: 'Chevrolet',
     price: 500
   },
   {
-    img: require('../assets/car-1.jpg'),
-    name: 'Mercedes Grand Sedan',
-    make: 'Chevrolet',
-    price: 500
-  },
-
-  {
-    img: require('../assets/car-1.jpg'),
+    img: new URL('../assets/car-4.jpg', import.meta.url).href,
     name: 'Mercedes Grand Sedan',
     make: 'Chevrolet',
     price: 500
   },
 
   {
-    img: require('../assets/car-1.jpg'),
+    img: new URL('../assets/car-5.jpg', import.meta.url).href,
     name: 'Mercedes Grand Sedan',
     make: 'Chevrolet',
     price: 500
   },
 
   {
-    img: require('../assets/car-1.jpg'),
+    img: new URL('../assets/car-6.jpg', import.meta.url).href,
     name: 'Mercedes Grand Sedan',
     make: 'Chevrolet',
     price: 500
   },
 
   {
-    img: require('../assets/car-1.jpg'),
+    img: new URL('../assets/car-7.jpg', import.meta.url).href,
     name: 'Mercedes Grand Sedan',
     make: 'Chevrolet',
     price: 500
   },
 
   {
-    img: require('../assets/car-1.jpg'),
+    img: new URL('../assets/car-8.jpg', import.meta.url).href,
     name: 'Mercedes Grand Sedan',
     make: 'Chevrolet',
     price: 500
   },
 
   {
-    img: require('../assets/car-1.jpg'),
+    img: new URL('../assets/car-9.jpg', import.meta.url).href,
+    name: 'Mercedes Grand Sedan',
+    make: 'Chevrolet',
+    price: 500
+  },
+
+  {
+    img: new URL('../assets/car-10.jpg', import.meta.url).href,
     name: 'Mercedes Grand Sedan',
     make: 'Chevrolet',
     price: 500
@@ -79,4 +79,4 @@ const Carousel: CarouselType = [
 ]
 
 
-export default Carousel;
+export default CarouselData;
