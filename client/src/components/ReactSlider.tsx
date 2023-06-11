@@ -6,7 +6,7 @@ import Carousel from './Carousel';
 import '../sass/carousel.scss'
 import { useEffect, useState } from "react";
 
-interface SliderSettings{
+type SliderSettingsType = {
   dots: boolean,
   infinite: boolean,
   slidesToShow: number,
@@ -14,7 +14,9 @@ interface SliderSettings{
   autoplay: boolean,
   speed: number,
   autoplaySpeed: number,
-  cssEase: string
+  cssEase: string,
+  accessibility: boolean,
+  draggable: boolean
 }
 
 const ReactSlider = () => {
@@ -30,15 +32,17 @@ const ReactSlider = () => {
     return () => { window.removeEventListener("resize", handleWindowResize)}
   }, []);
 
-  const settings: SliderSettings = {
+  const settings: SliderSettingsType = {
     dots: true,
     infinite: true,
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 1000,
+    speed: 3000,
     autoplaySpeed: 4000,
-    cssEase: "linear"
+    cssEase: "linear",
+    accessibility: true,
+    draggable: true
   };
 
   return (
