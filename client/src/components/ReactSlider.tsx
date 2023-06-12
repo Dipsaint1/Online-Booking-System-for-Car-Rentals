@@ -6,6 +6,21 @@ import Carousel from './Carousel';
 import '../sass/carousel.scss'
 import { useEffect, useState } from "react";
 
+type ResponsiveSettingsType = {
+  breakpoint: number,
+  settings: SettingsObjectType
+}
+
+type SettingsObjectType = {
+  infinite?: boolean,
+  slidesToShow: number,
+  slidesToScroll: number,
+  autoplay?: boolean,
+  initialSlide?: number, 
+  dots?: boolean
+}
+
+
 type SliderSettingsType = {
   dots: boolean,
   infinite: boolean,
@@ -16,41 +31,64 @@ type SliderSettingsType = {
   autoplaySpeed: number,
   cssEase: string,
   accessibility: boolean,
-  draggable: boolean
+  draggable: boolean,
+  // responsive: <T>[]
 }
 
+type SettingsType = {
+  dots: boolean, 
+  autoplay: boolean,
+  autoplaySpeed: number,
+  arrows: boolean,
+  infinite: boolean,
+  speed: number,
+  slidesToShow: number,
+  slidesToScroll: number,
+  initialSlide: number,
+  responsive: ResponsiveSettingsType[]
+} 
+
 const ReactSlider = () => {
-  const [slidesToShow, setSlidesToShow] = useState<number>(3);
-
-  useEffect(() => {
-    const handleWindowResize = () => {
-      if (window.innerWidth < 540 ) setSlidesToShow(1);
-      else if (window.innerWidth > 540 && window.innerWidth < 993) setSlidesToShow(2);
-      else setSlidesToShow(3);
-    }
-    window.addEventListener('resize', handleWindowResize);
-    return () => { window.removeEventListener("resize", handleWindowResize)}
-  }, []);
-
-  const settings: SliderSettingsType = {
-    dots: true,
-    infinite: true,
-    slidesToShow: slidesToShow,
-    slidesToScroll: 1,
+  
+  const settings: SettingsType = {
     autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+    infinite: true,
+    dots: true,
     speed: 3000,
-    autoplaySpeed: 4000,
-    cssEase: "linear",
-    accessibility: true,
-    draggable: true
-  };
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+    ]
+  }
 
   return (
     <Slider {...settings}>
       {CarouselData.map((item, index) => {
-        return(
-          <Carousel key={index} {...item} />
-        )
+        return( <Carousel key={index} {...item} /> )
       })}
     </Slider>
   )
